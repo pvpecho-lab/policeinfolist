@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Інформаційний лист</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1f4e79">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Інфолист">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+<style>
+:root{--bg:#f3f1ec;--card:#fff;--ink:#1c2430;--mute:#667085;--line:#d9d5cb;--acc:#1f4e79;--acc-ink:#fff;--danger:#b42318;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181f;--card:#1d232d;--ink:#e8ebf0;--mute:#9aa4b2;--line:#2f3846;--acc:#6aa7e0;--acc-ink:#0b1a2a;--danger:#f97066}}
+:root[data-theme="dark"]{--bg:#14181f;--card:#1d232d;--ink:#e8ebf0;--mute:#9aa4b2;--line:#2f3846;--acc:#6aa7e0;--acc-ink:#0b1a2a;--danger:#f97066}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 "Source Sans 3","Segoe UI",system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:16px 16px 110px}
+h1{font:600 26px/1.2 Georgia,"Times New Roman",serif;margin:8px 0 14px}
+h2{font:600 19px/1.2 Georgia,"Times New Roman",serif;margin:26px 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:10px}
+.card h3{margin:0 0 4px;font-size:17px}
+label{display:block;font-size:14px;color:var(--mute);margin:10px 0 4px}
+input,textarea,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px}
+textarea{min-height:140px;resize:vertical}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.two{grid-template-columns:1fr}}
+.add{display:flex;gap:8px}.add select{flex:1}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 14px}
+button.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc);font-weight:600}
+button.sm{padding:6px 10px;font-size:14px}
+button.del{color:var(--danger)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pp{display:flex;gap:12px;align-items:flex-start;margin-top:8px}
+.pp img,.pp .no{width:84px;height:108px;object-fit:cover;border-radius:6px;border:1px solid var(--line);flex:0 0 auto}
+.pp .no{display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:12px;text-align:center}
+.chk{display:flex;gap:8px;align-items:center;margin:6px 0;color:var(--ink);font-size:16px}
+.chk input{width:auto}
+.hint{color:var(--mute);font-size:14px;margin:6px 0 0}
+.foot{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
+.foot .in{max-width:720px;margin:0 auto}
+.foot button{width:100%;padding:13px}
+#msg{color:var(--mute);font-size:14px;text-align:center;margin-top:6px;min-height:20px}
+#sheet{position:fixed;left:-10000px;top:0}
+.pg{width:794px;height:1123px;background:#fff;color:#000;padding:50px 50px 70px;position:relative;font-family:"Times New Roman",Georgia,serif;overflow:hidden}
+.pg h3{font-size:24px;text-align:center;margin:0 0 18px}
+.pg h4{font-size:18px;margin:18px 0 8px}
+.pg table{width:100%;border-collapse:collapse;font-size:16px;margin-bottom:10px}
+.pg td{border:1px solid #000;padding:7px 10px;vertical-align:top;white-space:pre-wrap}
+.pg td.k{width:34%;font-weight:bold}
+.pg td.ph{width:118px;text-align:center;padding:6px}
+.pg td.ph img{width:104px;height:134px;object-fit:cover;display:block}
+.pg td.ph div{width:104px;height:134px;border:1px solid #000;font-size:12px;display:flex;align-items:center;justify-content:center}
+.pg p{margin:0 0 6px;font-size:16px;line-height:1.35;white-space:pre-wrap;text-align:justify}
+.pg .num{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-size:13px}
+.pg td.dc{text-align:center;font-weight:bold;font-size:14px}
+.pg td.dc img{display:block;margin:6px auto 0;max-width:100%;max-height:280px}
+.pg img.ai{display:block;margin:4px auto;max-width:100%;max-height:300px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Інформаційний лист</h1>
+
+  <div class="card">
+    <label for="date" style="margin-top:0">Дата складання</label>
+    <input type="date" id="date">
+    <div class="two">
+      <div><label for="numType">Тип номера</label>
+        <select id="numType"><option>Номер ЄО</option><option>Номер ЄРДР</option></select></div>
+      <div><label for="num">Значення</label><input id="num" inputmode="text"></div>
+    </div>
+  </div>
+
+  <h2>Залучені працівники</h2>
+  <div class="add"><button class="pri" id="wAdd" style="flex:1">Додати працівника</button></div>
+  <div id="staff"></div>
+
+  <h2>Учасники події</h2>
+  <div class="add">
+    <select id="pType"><option>Заявник</option><option>Потерпілий</option><option>Затриманий</option><option>Понятий</option><option>Інша особа</option></select>
+    <button class="pri" id="pAdd">Додати</button>
+  </div>
+  <div id="parts"></div>
+
+  <h2>Проведені слідчі дії</h2>
+  <div class="add">
+    <select id="aType"><option>Заява</option><option>Пояснення</option><option>Огляд місця події</option><option>Затримання</option><option>Обшук</option></select>
+    <button class="pri" id="aAdd">Додати</button>
+  </div>
+  <div id="acts"></div>
+
+  <h2>Фабула</h2>
+  <textarea id="fab" placeholder="Опишіть обставини події"></textarea>
+</main>
+
+<div class="foot"><div class="in">
+  <button class="pri" id="make">Створити PDF</button>
+  <div id="msg"></div>
+</div></div>
+<div id="sheet"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+var KEY="infoletter:v1",uid=1;
+var S={date:"",numType:"Номер ЄО",num:"",fab:"",staff:[],parts:[],acts:[]};
+var $=function(i){return document.getElementById(i)};
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function msg(t){$("msg").textContent=t||""}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({date:S.date,numType:S.numType,num:S.num,fab:S.fab,uid:uid,
+  parts:S.parts.map(function(p){return {id:p.id,t:p.t,fio:p.fio,dob:p.dob,addr:p.addr,tel:p.tel,src:"",doc:""}}),staff:S.staff,acts:S.acts.map(function(a){return {id:a.id,t:a.t,ps:a.ps,ws:a.ws,desc:a.desc,src:""}})}))}catch(e){}}
+try{var o=JSON.parse(localStorage.getItem(KEY)||"null");if(o){S.date=o.date||"";S.numType=o.numType||S.numType;S.num=o.num||"";S.fab=o.fab||"";S.parts=o.parts||[];S.acts=o.acts||[];S.staff=o.staff||[];uid=o.uid||1}}catch(e){}
+S.acts.forEach(function(a){a.ps=a.ps||[];a.ws=a.ws||[];a.desc=a.desc||"";a.src=a.src||""});S.parts.forEach(function(p){p.doc=p.doc||""});
+$("date").value=S.date;$("numType").value=S.numType;$("num").value=S.num;$("fab").value=S.fab;
+$("date").oninput=function(e){S.date=e.target.value;save()};
+$("numType").onchange=function(e){S.numType=e.target.value;save()};
+$("num").oninput=function(e){S.num=e.target.value;save()};
+$("fab").oninput=function(e){S.fab=e.target.value;save()};
+
+function pname(p){return p.t+(p.fio?" — "+p.fio:"")}
+function sname(w){return (w.pos?w.pos+" ":"")+(w.fio||"")}
+function rStaff(){
+  if(!S.staff.length){$("staff").innerHTML='<p class="hint">Натисніть «Додати працівника».</p>';return}
+  $("staff").innerHTML=S.staff.map(function(w){return '<div class="card"><div class="top"><h3>Працівник</h3><button class="sm del" data-wx="'+w.id+'">Видалити</button></div><div class="two"><div><label>Посада, звання</label><input data-sf="pos" data-id="'+w.id+'" value="'+esc(w.pos)+'"></div><div><label>ПІБ</label><input data-sf="fio" data-id="'+w.id+'" value="'+esc(w.fio)+'"></div></div></div>'}).join("");
+}
+function pbox(kind,id,key,src,label){
+  var b=function(a,t,c){return '<button class="sm'+(c||'')+'" data-ph="'+a+'|'+kind+'|'+id+'|'+key+'">'+t+'</button>'};
+  return '<div class="pp">'+(src?'<img src="'+src+'" alt="'+label+'">':'<div class="no">Немає фото</div>')+'<div><b>'+label+'</b><div class="bar">'+b('cam','Зробити фото')+b('gal','З галереї')+(src?b('clr','Прибрати',' del'):'')+'</div></div></div>';
+}
+function rParts(){
+  if(!S.parts.length){$("parts").innerHTML='<p class="hint">Оберіть тип і натисніть «Додати».</p>';return}
+  $("parts").innerHTML=S.parts.map(function(p){
+    return '<div class="card"><div class="top"><h3>'+esc(p.t)+'</h3><button class="sm del" data-px="'+p.id+'">Видалити</button></div>'+
+    pbox('p',p.id,'src',p.src,'Фото особи')+pbox('p',p.id,'doc',p.doc,'Фото документа')+
+    '<label>ПІБ</label><input data-f="fio" data-id="'+p.id+'" value="'+esc(p.fio)+'">'+
+    '<div class="two"><div><label>Дата народження</label><input type="date" data-f="dob" data-id="'+p.id+'" value="'+esc(p.dob)+'"></div>'+
+    '<div><label>Номер мобільного телефону</label><input type="tel" inputmode="tel" data-f="tel" data-id="'+p.id+'" value="'+esc(p.tel)+'"></div></div>'+
+    '<label>Місце проживання</label><input data-f="addr" data-id="'+p.id+'" value="'+esc(p.addr)+'"></div>';
+  }).join("");
+}
+function rActs(){
+  if(!S.acts.length){$("acts").innerHTML='<p class="hint">Оберіть дію і натисніть «Додати».</p>';return}
+  $("acts").innerHTML=S.acts.map(function(a){
+    var chk=S.parts.length?S.parts.map(function(p){
+      return '<label class="chk"><input type="checkbox" data-ap="'+a.id+'" value="'+p.id+'"'+(a.ps.indexOf(p.id)>-1?' checked':'')+'>'+esc(pname(p))+'</label>';
+    }).join(""):'<p class="hint">Спочатку додайте учасників події.</p>';
+    var wchk=S.staff.length?S.staff.map(function(w){return '<label class="chk"><input type="checkbox" data-aw="'+a.id+'" value="'+w.id+'"'+(a.ws.indexOf(w.id)>-1?' checked':'')+'>'+esc(sname(w))+'</label>'}).join(""):'<p class="hint">Спочатку додайте залучених працівників.</p>';
+    return '<div class="card"><div class="top"><h3>'+esc(a.t)+'</h3><button class="sm del" data-ax="'+a.id+'">Видалити</button></div>'+
+    '<label style="margin-top:6px">Залучені працівники</label>'+wchk+
+    '<label>Учасники слідчої дії</label>'+chk+
+    '<label>Опис</label><textarea style="min-height:90px" data-ad="'+a.id+'">'+esc(a.desc)+'</textarea>'+
+    pbox('a',a.id,'src',a.src,'Фото')+'</div>';
+  }).join("");
+}
+$("pAdd").onclick=function(){S.parts.push({id:uid++,t:$("pType").value,fio:"",dob:"",addr:"",tel:"",src:""});save();rParts();rActs()};
+$("aAdd").onclick=function(){S.acts.push({id:uid++,t:$("aType").value,ps:[],ws:[],desc:"",src:""});save();rActs()};
+$("wAdd").onclick=function(){S.staff.push({id:uid++,pos:"",fio:""});save();rStaff();rActs()};
+$("staff").addEventListener("input",function(e){var d=e.target.dataset;if(!d.sf)return;S.staff.filter(function(w){return w.id==d.id})[0][d.sf]=e.target.value;save()});
+$("staff").addEventListener("change",function(e){if(e.target.dataset.sf)rActs()});
+$("staff").addEventListener("click",function(e){var x=e.target.dataset.wx;if(x){S.staff=S.staff.filter(function(w){return w.id!=x});S.acts.forEach(function(a){a.ws=a.ws.filter(function(i){return i!=x})});save();rStaff();rActs()}});
+$("acts").addEventListener("input",function(e){var d=e.target.dataset;if(!d.ad)return;S.acts.filter(function(a){return a.id==d.ad})[0].desc=e.target.value;save()});
+$("parts").addEventListener("input",function(e){
+  var d=e.target.dataset;if(!d.f)return;
+  S.parts.filter(function(p){return p.id==d.id})[0][d.f]=e.target.value;save();
+});
+$("parts").addEventListener("change",function(e){if(e.target.dataset.f==="fio")rActs()});
+$("parts").addEventListener("click",function(e){
+  var d=e.target.dataset;
+  if(d.px){S.parts=S.parts.filter(function(p){return p.id!=d.px});S.acts.forEach(function(a){a.ps=a.ps.filter(function(i){return i!=d.px})});save();rParts();rActs()}
+  else if(d.ph){phAct(d.ph)}
+});
+$("acts").addEventListener("click",function(e){
+  var x=e.target.dataset.ax,ph=e.target.dataset.ph;if(ph)phAct(ph);
+  if(x){S.acts=S.acts.filter(function(a){return a.id!=x});save();rActs()}
+});
+$("acts").addEventListener("change",function(e){
+  var d=e.target.dataset,id=d.ap||d.aw;if(!id)return;
+  var a=S.acts.filter(function(a){return a.id==id})[0],L=d.ap?a.ps:a.ws,v=+e.target.value,i=L.indexOf(v);
+  if(e.target.checked&&i<0)L.push(v);if(!e.target.checked&&i>-1)L.splice(i,1);save();
+});
+function target(kind,id){var L=kind==="p"?S.parts:S.acts;return L.filter(function(x){return x.id==id})[0]}
+function rk(kind){if(kind==="p")rParts();else rActs()}
+function phAct(s){var a=s.split("|");if(a[0]==="clr"){target(a[1],a[2])[a[3]]="";rk(a[1])}else pick(a[1],a[2],a[3],a[0]==="cam")}
+function pick(kind,id,key,cam){
+  var f=document.createElement("input");f.type="file";f.accept="image/*";if(cam)f.setAttribute("capture","environment");
+  f.onchange=function(){
+    var file=f.files[0];if(!file)return;
+    var r=new FileReader();
+    r.onload=function(){var im=new Image();im.onload=function(){
+      var k=Math.min(1,1200/Math.max(im.width,im.height)),c=document.createElement("canvas");
+      c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+      target(kind,id)[key]=c.toDataURL("image/jpeg",0.82);rk(kind);
+    };im.onerror=function(){msg("Не вдалося прочитати зображення.")};im.src=r.result};
+    r.readAsDataURL(file);
+  };
+  f.click();
+}
+
+function fmtDate(v){if(!v)return"";var p=v.split("-");return p.length===3?p[2]+"."+p[1]+"."+p[0]:v}
+function blocks(){
+  var B=[],rows="";
+  B.push('<h3>Інформаційний лист</h3><table>'+
+    (S.date?'<tr><td class="k">Дата складання</td><td>'+esc(fmtDate(S.date))+'</td></tr>':'')+
+    (S.num.trim()?'<tr><td class="k">'+esc(S.numType)+'</td><td>'+esc(S.num)+'</td></tr>':'')+'</table>');
+  if(S.staff.length){
+    B.push('<h4>Залучені працівники</h4>');
+    B.push('<table>'+S.staff.map(function(w,i){return '<tr><td class="k">'+(i+1)+'. '+esc(w.pos)+'</td><td>'+esc(w.fio)+'</td></tr>'}).join("")+'</table>');
+  }
+  if(S.parts.length){
+    B.push('<h4>Учасники події</h4>');
+    S.parts.forEach(function(p){
+      var ln=function(k,v){return v&&String(v).trim()?'<tr><td class="k">'+k+'</td><td>'+esc(v)+'</td></tr>':''};
+      B.push('<table><tr><td class="ph" rowspan="5">'+(p.src?'<img src="'+p.src+'">':'<div>Фото відсутнє</div>')+'</td><td class="k">Статус</td><td>'+esc(p.t)+'</td></tr>'+
+        '<tr><td class="k">ПІБ</td><td>'+esc(p.fio)+'</td></tr>'+
+        '<tr><td class="k">Дата народження</td><td>'+esc(fmtDate(p.dob))+'</td></tr>'+
+        '<tr><td class="k">Місце проживання</td><td>'+esc(p.addr)+'</td></tr>'+
+        '<tr><td class="k">Мобільний телефон</td><td>'+esc(p.tel)+'</td></tr>'+(p.doc?'<tr><td class="dc" colspan="3">Фото документа<img src="'+p.doc+'"></td></tr>':'')+'</table>');
+    });
+  }
+  if(S.acts.length){
+    B.push('<h4>Проведені слідчі дії</h4>');
+    S.acts.forEach(function(a,i){
+      var names=a.ps.map(function(id){var p=S.parts.filter(function(p){return p.id==id})[0];return p?pname(p):""}).filter(Boolean);
+      var wn=a.ws.map(function(id){var w=S.staff.filter(function(w){return w.id==id})[0];return w?sname(w):""}).filter(Boolean);
+      B.push('<table><tr><td colspan="2" style="font-weight:bold;background:#eee">'+(i+1)+'. '+esc(a.t)+'</td></tr>'+
+        '<tr><td class="k">Залучені працівники</td><td>'+(wn.length?esc(wn.join("\n")):'—')+'</td></tr>'+
+        '<tr><td class="k">Учасники</td><td>'+(names.length?esc(names.join("\n")):'—')+'</td></tr>'+
+        (a.desc.trim()?'<tr><td class="k">Опис</td><td>'+esc(a.desc)+'</td></tr>':'')+
+        (a.src?'<tr><td colspan="2" style="text-align:center"><img class="ai" src="'+a.src+'"></td></tr>':'')+'</table>');
+    });
+  }
+  if(S.fab.trim()){
+    var ps=S.fab.split(/\n+/).filter(function(s){return s.trim()});
+    B.push('<h4>Фабула</h4>');
+    ps.forEach(function(t){B.push('<p>'+esc(t)+'</p>')});
+  }
+  return B;
+}
+function paginate(box){
+  box.innerHTML="";
+  var LIM=1003,pages=[];
+  function np(){var pg=document.createElement("div");pg.className="pg";var ct=document.createElement("div");pg.appendChild(ct);box.appendChild(pg);pages.push({pg:pg,ct:ct})}
+  np();
+  blocks().forEach(function(h){
+    var cur=pages[pages.length-1],w=document.createElement("div");w.innerHTML=h;
+    var kids=[].slice.call(w.childNodes);
+    kids.forEach(function(k){
+      cur=pages[pages.length-1];cur.ct.appendChild(k);
+      if(cur.ct.offsetHeight>LIM&&cur.ct.childNodes.length>1){np();pages[pages.length-1].ct.appendChild(k)}
+    });
+  });
+  // не залишати заголовок розділу в кінці сторінки
+  pages.forEach(function(p,i){var l=p.ct.lastChild;if(l&&l.tagName==="H4"&&pages[i+1]){pages[i+1].ct.insertBefore(l,pages[i+1].ct.firstChild)}});
+  pages.forEach(function(p,i){var n=document.createElement("div");n.className="num";n.textContent=(i+1)+" / "+pages.length;p.pg.appendChild(n)});
+  return box.querySelectorAll(".pg");
+}
+$("make").onclick=function(){
+  var btn=$("make");
+  if(typeof html2canvas==="undefined"||!window.jspdf){msg("Бібліотеки PDF не завантажились. Перевірте інтернет і оновіть сторінку.");return}
+  btn.disabled=true;
+  var box=$("sheet"),els=paginate(box);
+  var pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4",orientation:"portrait"}),chain=Promise.resolve();
+  [].forEach.call(els,function(el,i){
+    chain=chain.then(function(){
+      msg("Сторінка "+(i+1)+" з "+els.length+"…");
+      return html2canvas(el,{scale:2,backgroundColor:"#ffffff"}).then(function(cv){
+        if(i>0)pdf.addPage();pdf.addImage(cv.toDataURL("image/jpeg",0.88),"JPEG",0,0,210,297);
+      });
+    });
+  });
+  chain.then(function(){pdf.save("Інформаційний_лист"+(S.num.trim()?"_"+S.num.trim().replace(/[^\w\-А-Яа-яЁёІіЇїЄє]+/g,"_"):"")+".pdf");msg("Готово: PDF збережено.")})
+  .catch(function(){msg("Не вдалося створити PDF. Спробуйте з меншою кількістю фото.")})
+  .then(function(){btn.disabled=false;box.innerHTML=""});
+};
+rStaff();rParts();rActs();
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(function(){})}
+</script>
+</body>
+</html>
